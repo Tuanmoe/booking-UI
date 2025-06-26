@@ -82,19 +82,23 @@ export default function BookingPage() {
                       : " text-gray-700"
                   }`}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold">60.-</div>
-                  <div className="text-sm font-bold">Pour 1 heure</div>
+                  <div className="flex flex-col items-start justify-center">
+                    <div className="text-2xl sm:text-3xl font-bold">60.-</div>
+                    <div className="text-sm md:text-base font-bold">Pour 1 heure</div>
+                  </div>
                 </button>
                 <button
                   onClick={() => setSelectedPlan("11hours")}
-                  className={`px-4 sm:px-8 py-4 sm:py-6 rounded-xl text-center flex-1 ${
+                  className={`px-4 sm:px-8 py-4 sm:py-6 rounded-xl text-center flex-1 whitespace-nowrap ${
                     selectedPlan === "11hours"
                       ? "bg-blue-500 text-white"
                       : " text-gray-700"
                   }`}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold">600.-</div>
-                  <div className="text-sm font-bold">Pour 11 heure</div>
+                  <div className="flex flex-col items-start justify-center">
+                    <div className="text-2xl sm:text-3xl font-bold">600.-</div>
+                    <div className="text-sm md:text-base font-bold">Pour 11 heures</div>
+                  </div>
                 </button>
               </div>
 

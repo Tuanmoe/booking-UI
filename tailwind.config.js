@@ -19,7 +19,7 @@ module.exports = {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Montserrat',
+  				'Source Sans Pro',
   				'sans-serif'
   			]
   		},
