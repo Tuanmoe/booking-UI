@@ -27,14 +27,14 @@ export default function TimeSlots({
 
   return (
     <>
-      <h2 className="text-3xl font-bold text-center mb-12">Horaires</h2>
-    <div className='bg-gray-100 p-14 rounded-t-xl rounded-r-xl'>
-      <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Horaires</h2>
+    <div className='bg-gray-100 p-6 sm:p-10 lg:p-14 rounded-t-xl rounded-r-xl'>
+      <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-lg mx-auto">
         {DEFAULT_TIME_SLOTS.map((time) => (
             <button
             key={time}
             onClick={() => onTimeSelect(time)}
-            className={`py-3 text-center rounded-2xl font-medium transition-colors ${
+            className={`py-2 sm:py-3 px-2 sm:px-4 text-center rounded-xl sm:rounded-2xl font-medium transition-colors text-sm sm:text-base ${
                 selectedTime === time
                 ? "bg-blue-500 text-white text-lg font-bold"
                 : isTimeDisabled(time)

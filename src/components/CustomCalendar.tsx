@@ -84,17 +84,17 @@ export default function CustomCalendar({
   return (
     <div className={`bg-white ${className}`}>
       {/* Header with month navigation */}
-      <div className="flex items-center justify-between mb-12">
+      <div className="flex items-center justify-between mb-8 sm:mb-12">
         <Button 
           variant="ghost" 
           size="icon"
           onClick={handlePrevMonth}
-          className="h-8 w-8"
+          className="h-10 w-10 sm:h-12 sm:w-12"
         >
-          <ChevronLeft className="h-10 w-10  " />
+          <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
         </Button>
         
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-2xl sm:text-3xl font-bold">
           {calendarData.monthName} {calendarData.year}
         </h2>
         
@@ -102,31 +102,31 @@ export default function CustomCalendar({
           variant="ghost" 
           size="icon"
           onClick={handleNextMonth}
-          className="h-8 w-8"
+          className="h-10 w-10 sm:h-12 sm:w-12"
         >
-          <ChevronRight className="h-10 w-10" />
+          <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
         </Button>
       </div>
 
       {/* Days of week header */}
-      <div className="grid grid-cols-7 gap-2 text-center mb-8">
+      <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center mb-6 sm:mb-8">
         {DAYS_OF_WEEK.map((day) => (
-          <div key={day} className="text-sm font-bold text-gray-700">
+          <div key={day} className="text-xs sm:text-sm font-bold text-gray-700">
             {day}
           </div>
         ))}
       </div>
 
       {/* Calendar grid */}
-      <div className="grid grid-cols-7 gap-5">
+      <div className="grid grid-cols-7 gap-2 sm:gap-3 lg:gap-5">
         {calendarData.calendarDays.map((day, index) => (
           <div key={index} className="aspect-square">
             {day ? (
               <button
                 onClick={() => handleDateClick(day)}
-                className={`w-full h-full p-3 text-center rounded-lg transition-colors ${
+                className={`w-full h-full p-1 sm:p-2 lg:p-3 text-center rounded-lg transition-colors text-sm sm:text-base ${
                   isDateSelected(day)
-                    ? "bg-blue-500 text-white"
+                    ? "bg-blue-500 text-white font-bold"
                     : "bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300"
                 }`}
               >

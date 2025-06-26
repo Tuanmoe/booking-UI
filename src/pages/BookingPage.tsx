@@ -13,8 +13,6 @@ export default function BookingPage() {
     email: ""
   })
 
-
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Booking confirmed:", { ...formData, selectedDate, selectedTime, selectedPlan })
@@ -29,17 +27,17 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-200 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-200 p-2 sm:p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-gray-200 p-6 mb-2">
-          <h1 className="text-[2.5rem] font-bold text-gray-900 mb-4">
+        <div className="bg-gray-200 p-4 sm:p-6 mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-bold text-gray-900 mb-4">
             Réserver une séance
           </h1>
           
-          <div className="flex flex-col md:flex-row flex-wrap justify-between gap-8">
+          <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 justify-between">
             {/* Left Column - Form */}
-            <div className="w-1/3">
+            <div className="sm:w-1/2 lg:w-1/3 w-full">
               {/* Trial Session Banner */}
               <div className="flex items-center gap-3 mb-10">
                 <img 
@@ -69,33 +67,33 @@ export default function BookingPage() {
             </div>
 
             {/* Right Column - Pricing */}
-            <div>
+            <div className="sm:w-1/2 lg:w-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-10">
                 Cours privé - particulier
               </h2>
               
               {/* Pricing */}
-              <div className="flex gap-4 mb-6">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <button
                   onClick={() => setSelectedPlan("1hour")}
-                  className={`px-8 py-6 rounded-xl text-center ${
+                  className={`px-4 sm:px-8 py-4 sm:py-6 rounded-xl text-center flex-1 ${
                     selectedPlan === "1hour"
                       ? "bg-blue-500 text-white"
                       : " text-gray-700"
                   }`}
                 >
-                  <div className="text-3xl font-bold">60.-</div>
+                  <div className="text-2xl sm:text-3xl font-bold">60.-</div>
                   <div className="text-sm font-bold">Pour 1 heure</div>
                 </button>
                 <button
                   onClick={() => setSelectedPlan("11hours")}
-                  className={`px-8 py-6 rounded-xl text-center ${
+                  className={`px-4 sm:px-8 py-4 sm:py-6 rounded-xl text-center flex-1 ${
                     selectedPlan === "11hours"
                       ? "bg-blue-500 text-white"
                       : " text-gray-700"
                   }`}
                 >
-                  <div className="text-3xl font-bold">600.-</div>
+                  <div className="text-2xl sm:text-3xl font-bold">600.-</div>
                   <div className="text-sm font-bold">Pour 11 heure</div>
                 </button>
               </div>
@@ -126,8 +124,8 @@ export default function BookingPage() {
         </div>
 
         {/* Main Content */}
-        <div className="bg-white rounded-2xl p-6 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="bg-white rounded-2xl p-4 sm:p-6 py-8 sm:py-12">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Calendar */}
             <div>
               <CustomCalendar
@@ -144,13 +142,13 @@ export default function BookingPage() {
               />
               
               {/* Summary and Confirm */}
-              <div className="pt-6 pb-10 text-center px-10 bg-gray-100 mx-auto rounded-b-xl rounded-l-xl">
-                <div className="text-xl font-bold text-gray-800 mb-10">
+              <div className="pt-6 pb-8 sm:pb-10 text-center px-4 sm:px-10 bg-gray-100 mx-auto rounded-b-xl rounded-l-xl">
+                <div className="text-lg sm:text-xl font-bold text-gray-800 mb-6 sm:mb-10">
                   {formatDate(selectedDate)} à {selectedTime}
                 </div>
                 <Button
                   onClick={handleSubmit}
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-12 py-8 text-lg font-bold rounded-full min-w-[300px]"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 sm:px-12 py-4 sm:py-8 text-base sm:text-lg font-bold rounded-full w-full sm:min-w-[300px] sm:w-auto"
                 >
                   CONFIRMER
                 </Button>
